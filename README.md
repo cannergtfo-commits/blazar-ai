@@ -1,42 +1,34 @@
 # blazar-ai
 
-Local dual-agent system powered by Qwen3-30B-A3B (MoE), optimized for CPU-only mini PCs like the KOOSMILE (i9-12900HK + 32 GB DDR4, Iris Xe).
+Local dual-agent workspace powered by Qwen3 via Ollama, with a Gradio UI and a dark cosmic theme.
 
-- **Coding Agent**: Build apps, games, projects
-- **Trading Agent**: Educational paper-trading across blockchains (safe, no real funds)
-- **Gradio UI**: Project workspace with chat, file open/save/editor, and basic media generation (icons & backgrounds via SVG + procedural)
-- **Dark cosmic theme** matching Blazar Force
+- **Coding Agent** - build apps, games, projects
+- **Trading Agent (Edu)** - educational paper trading only, never real funds
+- **Idea -> Prompt** - turns plain ideas into structured agent prompts
+- **Edit Prompt tab** - view and edit each agent's system prompt (saved in `prompts/`)
+- **Workspace / Editor** - open, edit and save files in `workspace/`
+- **Media Gen** - SVG icons and backgrounds
 
-## Super Simple Start (Download → Install → Double-Click)
+## Install (Windows, 3 steps)
 
-### 1. Prerequisites
-- Python 3.10+
-- Ollama installed and running (`ollama serve`). Download from https://ollama.com if needed.
+1. On GitHub click **Code -> Download ZIP**, then extract it anywhere.
+2. Double-click **`setup_windows.bat`**. It installs Python and Ollama if missing, installs packages,
+   downloads the model and creates a **Blazar AI** launcher on your Desktop.
+3. Double-click **Blazar AI** on your Desktop. The browser opens at http://localhost:7860.
 
-### 2. Install
-```bash
-git clone https://github.com/cannergtfo-commits/blazar-ai.git
-cd blazar-ai
-python setup.py
+Model: `qwen3:30b-a3b` (needs about 24 GB RAM). On PCs with less RAM, setup picks `qwen3:8b` automatically.
+Override with the `BLAZAR_MODEL` environment variable before running setup.
+
+## Mac / Linux
+
 ```
+python3 setup.py
+./start_ui.sh
+```
+(Install Ollama first from https://ollama.com.)
 
-This automatically:
-- Installs Python dependencies
-- **Pulls the model** (`ollama pull qwen3:30b-a3b`) and creates the CPU-tuned version
-- Creates workspace + sample project
-- Initializes memory
-- **Creates a desktop shortcut** (`blazar-ai.bat` on Windows)
-
-### 3. Run
-**Double-click the `blazar-ai.bat` shortcut on your Desktop**
-
-(or double-click `start_ui.bat` in this folder)
-
-It will start the UI and automatically open http://localhost:7860 in your browser.
-
-## Hardware Notes (KOOSMILE)
-- Q4_K_M quantization, 16k context, ~12 threads recommended
-- Media generation is CPU-friendly (SVG + Pillow procedural)
-- Keep ~8-10 GB free RAM while the model is loaded
+## Troubleshooting
+- Chat says "Ollama problem": run `ollama serve`, then `ollama pull <model>`, or re-run setup.
+- Port busy: set `BLAZAR_PORT` to another port.
 
 Educational use only for the trading agent. Never risk real funds.

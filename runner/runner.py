@@ -28,7 +28,7 @@ import urllib.request
 from datetime import datetime
 
 HOME = os.path.dirname(os.path.abspath(__file__))
-CFG = json.load(open(os.path.join(HOME, "config.json"), encoding="utf-8"))
+CFG = json.load(open(os.path.join(HOME, "config.json"), encoding="utf-8-sig"))
 PROJECT = CFG["project"]
 GIT = CFG["git"]
 UE = CFG["engine"]
@@ -372,7 +372,7 @@ def do_ai_edit(lf, t, res, wt):
 
 
 def do_task(path):
-    t = json.load(open(path, encoding="utf-8"))
+    t = json.load(open(path, encoding="utf-8-sig"))
     tid = t["id"]
     if not re.fullmatch(r"[A-Za-z0-9_-]{1,40}", tid):
         raise ValueError("bad id")

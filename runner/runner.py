@@ -283,7 +283,7 @@ def write_nightly_report(results):
     day = datetime.now().strftime("%Y-%m-%d")
     path = os.path.join(REPORTS, f"nightly-{day}.md")
     lines = [
-        f"# Blazar AI nightly report — {day}",
+        f"# Blazar AI nightly report - {day}",
         "",
         f"- Host: main PC",
         f"- Model: `{MODEL}`",

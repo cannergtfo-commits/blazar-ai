@@ -32,3 +32,15 @@ python3 setup.py
 - Port busy: set `BLAZAR_PORT` to another port.
 
 Educational use only for the trading agent. Never risk real funds.
+
+## Unattended job runner (optional)
+
+The `runner/` folder is a **manual** job queue for Unreal projects (used with Blazarshootem on a Windows PC that has the engine + Ollama).
+
+1. Copy `runner/` somewhere (e.g. `C:\Users\YOU\BlazarAI`).
+2. Copy `config.example.json` to `config.json` and set `project`, `git`, `engine`, and `model`.
+3. Drop job JSON files into `queue\` (see `runner/examples/` and `runner/README.md`).
+4. Double-click `start.bat` when you want it to work. It drains the queue, writes `done\` + `reports\`, unloads the model, and exits.
+
+There is **no scheduled task** and **no overnight window** — it only runs when you start it. It refuses to start while Unreal Editor or the game is using the GPU. AI edits land on local `blazar-ai/<id>` branches and are never pushed.
+

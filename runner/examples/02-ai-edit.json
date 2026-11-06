@@ -1,0 +1,1 @@
+{"id":"fix-typo","type":"ai_edit","goal":"Fix the typo 'recieve' in comments only. Do not change code logic.","allowed_files":["Source/Blazarshootem/Foo.cpp"],"tests":["build"],"max_minutes":60}

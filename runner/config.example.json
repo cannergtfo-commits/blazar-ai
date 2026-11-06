@@ -1,0 +1,12 @@
+{
+  "project": "C:\\Users\\YOU\\Documents\\Unreal Projects\\Blazarshootem",
+  "git": "C:\\Program Files\\Git\\cmd\\git.exe",
+  "engine": "C:\\Program Files\\Epic Games\\UE_5.8",
+  "ollama": "http://localhost:11434",
+  "ollama_exe": "ollama",
+  "model": "qwen2.5-coder:14b",
+  "num_ctx": 8192,
+  "model_timeout_s": 1800,
+  "max_retries": 3,
+  "idle_cpu_pct": 35.0
+}

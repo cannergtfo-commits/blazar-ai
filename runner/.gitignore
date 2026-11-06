@@ -1,0 +1,10 @@
+config.json
+paused.flag
+runner.lock
+queue/
+running/
+done/
+worktrees/
+reports/
+__pycache__/
+*.pyc
